@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/softforium/static/css/main.627dba1e.css",
+    "main.js": "/softforium/static/js/main.2884f297.js",
+    "index.html": "/softforium/index.html",
+    "main.627dba1e.css.map": "/softforium/static/css/main.627dba1e.css.map",
+    "main.2884f297.js.map": "/softforium/static/js/main.2884f297.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.627dba1e.css",
+    "static/js/main.2884f297.js"
+  ]
+}
