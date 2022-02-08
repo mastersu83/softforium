@@ -1,4 +1,4 @@
-# Ссылка на gh-pages [test-soft](https://mastersu83.github.io/softfor/).
+# Ссылка на gh-pages [test-soft](https://mastersu83.github.io/softforium/).
 
 #Getting Started with Create React App
 
