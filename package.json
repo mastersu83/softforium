@@ -1,0 +1,54 @@
+{
+  "name": "test-softfor",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://mastersu83.github.io/softforium/",
+  "dependencies": {
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/material": "^5.2.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "axios": "^0.25.0",
+    "gh-pages": "^3.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.26.0",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.49.7",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "yarn build"
+},
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
