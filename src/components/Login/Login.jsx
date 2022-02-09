@@ -34,7 +34,7 @@ const Login = ({ isAuth }) => {
         <div className={classes.login__title}>Пароль</div>
         <input
           {...register("password")}
-          type="text"
+          type="password"
           className={classes.login__input}
         />
         <button
