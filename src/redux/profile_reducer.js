@@ -2,11 +2,8 @@ const initialState = {};
 
 export const profile_reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "TOGGLE_TAB":
-      return { ...state, filterBy: action.payload };
-
-    case "SET_FILTER":
-      return { ...state, filterBy: action.payload };
+    case "SET_USER_DATA":
+      return { ...state, ...action.payload.profile };
     default:
       return state;
   }

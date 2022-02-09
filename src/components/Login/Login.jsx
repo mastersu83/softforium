@@ -10,7 +10,8 @@ const Login = ({ isAuth }) => {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    dispatch(loginThunk(data));
+    console.log(data);
+    dispatch(loginThunk(data.email, data.password));
   };
 
   React.useEffect(() => {
@@ -20,7 +21,10 @@ const Login = ({ isAuth }) => {
   }, [isAuth]);
   return (
     <div className={classes.login}>
-      <div className={classes.login__container}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={classes.login__container}
+      >
         <div className={classes.login__title}>Email или номер телефона</div>
         <input
           {...register("email")}
@@ -34,7 +38,7 @@ const Login = ({ isAuth }) => {
           className={classes.login__input}
         />
         <button
-          onClick={handleSubmit(onSubmit)}
+          // onClick={handleSubmit(onSubmit)}
           className={classes.login__button}
         >
           Войти
@@ -43,7 +47,7 @@ const Login = ({ isAuth }) => {
           <span>Если не зарегистрированны:</span>
           <Link to="/register">Регистрация</Link>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

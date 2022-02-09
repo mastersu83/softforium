@@ -1,19 +1,16 @@
 import axios from "axios";
+import { utils } from "../utils/utils";
 
-const generateID = () => {
-  const token = Math.random().toString(16).slice(2);
-  localStorage.setItem("X-APP-ID", JSON.stringify(token));
-  return token;
-};
-const XAPPID = localStorage.getItem("X-APP-ID") || generateID();
+const XAPPID = localStorage.getItem("X-APP-ID") || utils.generateID();
 
 export const profileAPI = {
   me(accessToken) {
     return axios
       .get(`https://testtask.softorium.pro/users/me`, {
         headers: {
+          token_type: "bearer",
           "X-APP-ID": XAPPID,
-          Authorization: "Bearer" + accessToken,
+          Authorization: "Bearer " + accessToken,
         },
       })
       .then((response) => {
@@ -23,32 +20,44 @@ export const profileAPI = {
 };
 
 export const authAPI = {
-  register(phone, password, userName, email, birthday, avatar) {
-    return axios
-      .post(`https://testtask.softorium.pro/signup`, {
-        phone,
-        password,
-        userName,
-        email,
-        birthday,
-        avatar,
-      })
-      .then((resp) => {
-        return resp;
-      });
-  },
-  login(email, password) {
+  register(phone, password, name, email, birthday, base64Img) {
     return axios
       .post(
-        `https://testtask.softorium.pro/login`,
-        { email, password },
+        `https://testtask.softorium.pro/signup`,
+        {
+          phone,
+          password,
+          name,
+          email,
+          birthday,
+          base64Img,
+        },
         {
           headers: {
+            "Content-Type": "application/json",
             "X-APP-ID": XAPPID,
           },
         }
       )
       .then((resp) => {
+        console.log(resp);
+        return resp;
+      });
+  },
+  login(email, password) {
+    let formData = new FormData();
+    formData.append("username", email);
+    formData.append("password", password);
+
+    return axios
+      .post(`https://testtask.softorium.pro/signin`, formData, {
+        headers: {
+          // "Content-Type": "multipart/form-data",
+          "X-APP-ID": XAPPID,
+        },
+      })
+      .then((resp) => {
+        console.log(resp);
         return resp;
       });
   },

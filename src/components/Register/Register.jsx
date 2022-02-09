@@ -4,13 +4,15 @@ import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/auth_action";
+import { utils } from "../../utils/utils";
 
 const Register = ({ isAuth }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    dispatch(registerThunk(data));
+  const onSubmit = async (data) => {
+    const base64Img = await utils.convertBase64(data.avatar[0]);
+    dispatch(registerThunk(data, base64Img));
   };
 
   React.useEffect(() => {
@@ -33,7 +35,7 @@ const Register = ({ isAuth }) => {
           />
           <div className={classes.login__title}>Имя пользователя</div>
           <input
-            {...register("userName")}
+            {...register("name")}
             type="text"
             className={classes.login__input}
             required
