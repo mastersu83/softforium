@@ -10,8 +10,7 @@ const Login = ({ isAuth }) => {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    dispatch(loginThunk(data.email, data.password));
+    dispatch(loginThunk(data.phone, data.password));
   };
 
   React.useEffect(() => {
@@ -25,17 +24,19 @@ const Login = ({ isAuth }) => {
         onSubmit={handleSubmit(onSubmit)}
         className={classes.login__container}
       >
-        <div className={classes.login__title}>Email или номер телефона</div>
+        <div className={classes.login__title}>Введите номер телефона</div>
         <input
-          {...register("email")}
+          {...register("phone")}
           type="text"
           className={classes.login__input}
+          placeholder="+7"
         />
         <div className={classes.login__title}>Пароль</div>
         <input
           {...register("password")}
           type="password"
           className={classes.login__input}
+          placeholder="Пароль"
         />
         <button
           // onClick={handleSubmit(onSubmit)}

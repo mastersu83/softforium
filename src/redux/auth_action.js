@@ -33,11 +33,10 @@ export const getProfileThunk = () => async (dispatch) => {
   }
 };
 
-export const loginThunk = (email, password) => async (dispatch) => {
+export const loginThunk = (phone, password) => async (dispatch) => {
   try {
-    if (email.length && password.length) {
-      let response = await authAPI.login(email, password);
-      console.log(response);
+    if (phone.length && password.length) {
+      let response = await authAPI.login(phone, password);
       localStorage.setItem("accessToken", response.data.access_token);
       dispatch(loginAction());
     }

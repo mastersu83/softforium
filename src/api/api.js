@@ -44,20 +44,18 @@ export const authAPI = {
         return resp;
       });
   },
-  login(email, password) {
+  login(phone, password) {
     let formData = new FormData();
-    formData.append("username", email);
+    formData.append("username", phone);
     formData.append("password", password);
 
     return axios
       .post(`https://testtask.softorium.pro/signin`, formData, {
         headers: {
-          // "Content-Type": "multipart/form-data",
           "X-APP-ID": XAPPID,
         },
       })
       .then((resp) => {
-        console.log(resp);
         return resp;
       });
   },

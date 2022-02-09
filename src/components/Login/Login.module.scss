@@ -32,6 +32,9 @@
     color: #ffffff;
     font-size: 15px;
     margin-bottom: 20px;
+    &::placeholder {
+      color: #c9c7c7;
+    }
   }
   &__button {
     width: 100%;
