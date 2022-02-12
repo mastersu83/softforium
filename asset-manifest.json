@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/softforium/static/css/main.27956a3b.css",
-    "main.js": "/softforium/static/js/main.a19a5e76.js",
+    "main.css": "/softforium/static/css/main.1baef228.css",
+    "main.js": "/softforium/static/js/main.226edfa1.js",
     "index.html": "/softforium/index.html",
-    "main.27956a3b.css.map": "/softforium/static/css/main.27956a3b.css.map",
-    "main.a19a5e76.js.map": "/softforium/static/js/main.a19a5e76.js.map"
+    "main.1baef228.css.map": "/softforium/static/css/main.1baef228.css.map",
+    "main.226edfa1.js.map": "/softforium/static/js/main.226edfa1.js.map"
   },
   "entrypoints": [
-    "static/css/main.27956a3b.css",
-    "static/js/main.a19a5e76.js"
+    "static/css/main.1baef228.css",
+    "static/js/main.226edfa1.js"
   ]
 }
