@@ -41,7 +41,7 @@ export const loginThunk = (phone, password) => async (dispatch) => {
       dispatch(loginAction());
     }
   } catch (e) {
-    console.log(e);
+    alert("Указано некорректное значение логина или пароля.");
   }
 };
 export const registerThunk =
