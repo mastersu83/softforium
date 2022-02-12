@@ -41,11 +41,15 @@ export const loginThunk = (phone, password) => async (dispatch) => {
       dispatch(loginAction());
     }
   } catch (e) {
-    console.log(e.message);
+    console.log(e);
   }
 };
 export const registerThunk =
-  ({ phone, password, name, email, date, month, year }, base64Img) =>
+  (
+    { phone, password, name, email, date, month, year },
+    avatar_img,
+    time_zone
+  ) =>
   async (dispatch) => {
     let birthday = year + "-" + month + "-" + date;
     try {
@@ -57,15 +61,21 @@ export const registerThunk =
         birthday.length
       ) {
         await authAPI
-          .register(phone, password, name, email, birthday, base64Img)
+          .register(
+            phone,
+            password,
+            name,
+            email,
+            birthday,
+            avatar_img,
+            time_zone
+          )
           .then((resp) => {
             dispatch(setAuthUserData(resp.data));
             alert("Вы зарегистрировались, теперь можете войти");
           });
       }
     } catch (e) {
-      alert(
-        "Пользователь с указанным номером телефона уже существует в системе."
-      );
+      alert("Указано некорректное значение номера телефона.");
     }
   };

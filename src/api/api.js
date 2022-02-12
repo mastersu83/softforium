@@ -20,7 +20,7 @@ export const profileAPI = {
 };
 
 export const authAPI = {
-  register(phone, password, name, email, birthday, base64Img) {
+  register(phone, password, name, email, birthday, avatar_img, time_zone) {
     return axios
       .post(
         `https://testtask.softorium.pro/signup`,
@@ -30,7 +30,8 @@ export const authAPI = {
           name,
           email,
           birthday,
-          base64Img,
+          avatar_img,
+          time_zone,
         },
         {
           headers: {
@@ -40,7 +41,6 @@ export const authAPI = {
         }
       )
       .then((resp) => {
-        console.log(resp);
         return resp;
       });
   },
